@@ -162,9 +162,9 @@ router.post('/addNewClient', async (req, res) => {
     </html>`
   }
 
-  mailgun.messages().send(emailContentToClient, function (error, body) {
-    console.log(body)
-  })
+  // mailgun.messages().send(emailContentToClient, function (error, body) {
+  //   console.log(body)
+  // })
 
   res.json({
     success: true
