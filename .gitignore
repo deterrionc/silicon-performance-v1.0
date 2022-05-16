@@ -1,0 +1,11 @@
+node_modules/
+migrate/
+files/*
+seeder.json
+package-lock.json
+config/default.json
+.prettierrc
+
+client/node_modules/
+client/package-lock.json
+client/.eslintcache
