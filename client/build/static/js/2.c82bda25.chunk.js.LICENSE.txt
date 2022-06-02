@@ -11,8 +11,8 @@ object-assign
 */
 
 /*!
- * ApexCharts v3.29.0
- * (c) 2018-2021 ApexCharts
+ * ApexCharts v3.35.3
+ * (c) 2018-2022 ApexCharts
  * Released under the MIT License.
  */
 
@@ -45,7 +45,7 @@ object-assign
       PERFORMANCE OF THIS SOFTWARE.
       ***************************************************************************** */
 
-/*! @vimeo/player v2.16.1 | (c) 2021 Vimeo | MIT License | https://github.com/vimeo/player.js */
+/*! @vimeo/player v2.16.4 | (c) 2022 Vimeo | MIT License | https://github.com/vimeo/player.js */
 
 /*! Native Promise Only
       v0.8.1 (c) Kyle Simpson
@@ -53,6 +53,8 @@ object-assign
   */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
 /*! svg.draggable.js - v2.2.2 - 2019-01-08
 * https://github.com/svgdotjs/svg.draggable.js
@@ -91,6 +93,15 @@ object-assign
 
 /** @license React v17.0.2
  * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *

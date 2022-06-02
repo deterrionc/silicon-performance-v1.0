@@ -71,7 +71,7 @@ const Login = ({ login, isAuthenticated }) => {
                     </div>
                     <div className='form-group'>
                       <Link
-                        to='/pre-register'
+                        to='/register'
                         className='btn form-control'
                         style={{ backgroundColor: '#0071BD', color: 'white' }}
                       >
