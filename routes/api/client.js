@@ -31,15 +31,15 @@ router.delete('/deleteNotification/:id', async (req, res) => {
 
 router.get('/getAdmin', async (req, res) => {
   const adminFromDB = await User.findOne({ type: 'admin' })
-  const admin = {
-    _id: adminFromDB._id,
-    firstName: adminFromDB.firstName,
-    lastName: adminFromDB.lastName
-  }
+  // const admin = {
+  //   _id: adminFromDB._id,
+  //   firstName: adminFromDB.firstName,
+  //   lastName: adminFromDB.lastName
+  // }
 
   res.json({
     success: true,
-    admin
+    admin:adminFromDB
   })
 })
 
