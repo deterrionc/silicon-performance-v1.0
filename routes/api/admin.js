@@ -22,7 +22,6 @@ const mailgunDomain = config.get('mailgun.domain')
 var mailgun = require('mailgun-js')({ apiKey: mailgunApiKey, domain: mailgunDomain })
 
 router.get('/getAdminClients', async (req, res) => {
-  await User.findByIdAndDelete('62fbf4d9eea06515cba227b7')
   const clientsFromDB = await User.find({ type: 'client' })
   var clients = []
 
