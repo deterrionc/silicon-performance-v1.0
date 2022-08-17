@@ -4,6 +4,7 @@ import bell from '../../img/common/bell.png'
 import { getNotifications } from '../../actions/client'
 import { useHistory } from 'react-router'
 import { getClientUnreadMessages, messagesRead } from '../../actions/message'
+import { setCurrentPage } from '../../actions/admin'
 
 const ClientHeader = ({ getNotifications, notifications, clientID, getClientUnreadMessages, clientUnreadMessages, messagesRead }) => {
   const history = useHistory()
@@ -12,6 +13,13 @@ const ClientHeader = ({ getNotifications, notifications, clientID, getClientUnre
     getNotifications(clientID)
     getClientUnreadMessages(clientID)
   }, [getNotifications, getClientUnreadMessages, clientID])
+
+  const goPage = async location => {
+    setCurrentPage(location)
+    await history.push(`/`)
+    await history.push(`/dashboard`)
+    await history.push(`/dashboard/${location}`)
+  }
 
   return (
     <div className='admin-header d-flex flex-row-reverse align-items-center pr-3'>
@@ -37,7 +45,7 @@ const ClientHeader = ({ getNotifications, notifications, clientID, getClientUnre
                 <div className="dropdown-item" onClick={e => {
                   e.stopPropagation()
                   messagesRead(clientID)
-                  history.push('dashboard/messages')
+                  goPage('messages')
                 }}>
                   There are {clientUnreadMessages} new message(s).
                 </div>
@@ -49,7 +57,7 @@ const ClientHeader = ({ getNotifications, notifications, clientID, getClientUnre
         :
         <i className='fa fa-bell ml-2 cursor-pointer'></i>
       }
-      <i onClick={() => history.push('/dashboard/messages')} className='fa fa-question-circle ml-2 cursor-pointer'></i>
+      <i onClick={() => goPage('messages')} className='fa fa-question-circle ml-2 cursor-pointer'></i>
     </div>
   )
 }
