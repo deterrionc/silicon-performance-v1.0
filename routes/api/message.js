@@ -27,7 +27,7 @@ router.post('/addNewMessage', async (req, res) => {
   if (req.body.writtenBy === 'admin') {
     await User.findByIdAndUpdate(req.body.client, { toClientMessages: toClientMessages + 1 }, { new: true })
     if (toClientUnread >= 0) {
-      await User.findByIdAndUpdate(req.body.client, { toClientUnread: toClientUnread + 1 }, { new: true })
+      await User.findByIdAndUpdate(req.body.client, { toClientUnread: toClientUnread + 1, messageSent: false }, { new: true })
     }
   } else {
     await User.findByIdAndUpdate(req.body.client, { toAdminMessages: toAdminMessages + 1 }, { new: true })
@@ -160,8 +160,8 @@ const scheduleForSendEmail = schedule.scheduleJob(ruleForEmail, async () => {
   const clients = await User.find({ type: 'client' })
 
   clients.forEach(async (client) => {
-    if (client.toClientUnread > 0) {
-      await User.findByIdAndUpdate(client._id, { toClientUnread: 0 }, { new: true })
+    if (client.messageSent === false) {
+      await User.findByIdAndUpdate(client._id, { messageSent: true }, { new: true })
       await sendEmailToCustomer(client)
     }
   })

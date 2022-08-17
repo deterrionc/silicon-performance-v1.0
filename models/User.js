@@ -106,6 +106,10 @@ const UserSchema = new mongoose.Schema({
   toClientUnread: {
     type: Number,
     default: 0
+  },
+  messageSent: {
+    type: Boolean,
+    default: true
   }
 })
 
