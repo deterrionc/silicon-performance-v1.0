@@ -163,8 +163,6 @@ const scheduleForSendEmail = schedule.scheduleJob(ruleForEmail, async () => {
     if (client.messageSent === false && client.toClientUnread > 0) {
       await User.findByIdAndUpdate(client._id, { messageSent: true }, { new: true })
       await sendEmailToCustomer(client)
-
-      console.log(client)
     }
   })
 })

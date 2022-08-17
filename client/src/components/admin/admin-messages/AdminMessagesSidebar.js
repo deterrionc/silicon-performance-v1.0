@@ -37,7 +37,7 @@ const AdminMessagesSidebar = ({ getAdminClients, clients, goPage, setChatClient,
       <div className='px-2 h5'>
         Client List
       </div>
-      <div className='p-2'>
+      <div className='p-2 overflow-auto' style={{ height: '70vh' }}>
         {showClients.map((item, index) =>
           <div key={index} onClick={() => {
             goPage(history, `messages/${item._id}`)
